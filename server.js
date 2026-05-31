@@ -50,6 +50,13 @@ const Router = require('./routes/authRoutes');
 
 
 app.use(loggermiddleware);
+
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Todo API is running"
+    });
+});
 app.use('/api', router);
 app.use('/api/auth',Router);
 
